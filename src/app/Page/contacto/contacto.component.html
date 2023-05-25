@@ -1,0 +1,43 @@
+
+
+<<!-- <label for="txtMateria">Materia:</label>
+<input id="txtMateria" [(ngModel)]="formulario.materia"/>
+<br/>
+<label for="txtModalidad">Modalidad</label>
+<input id="txtModalidad" [(ngModel)]="formulario.modalidad"/>
+<br/>
+<label for="txtDuracion">Duracion:</label>
+<input id="txtDuracion" [(ngModel)]="formulario.duracion"/>
+<br/>
+<br/>  -->>
+
+
+
+<p>
+    <mat-form-field appearance="fill">
+      <mat-label>Materia</mat-label>
+      <input matInput placeholder="Ex.Programacion" value="" [(ngModel)]="formulario.materia" required>
+      
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Modalidad</mat-label>
+      <input matInput placeholder="Ex.Presencial" value="" [(ngModel)]="formulario.modalidad" required>     
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Duracion</mat-label>
+      <input matInput placeholder="Ex.120" value="" [(ngModel)]="formulario.duracion" required>
+    </mat-form-field>
+  </p>
+
+<div class="example-button-row">
+  <button (click)="guardar()" mat-button color="warn">guardar</button>
+</div>
+
+
+  <div class="example-button-row">
+    <button (click)="actualizar()" mat-button color="warn">actualizar</button>
+  </div>

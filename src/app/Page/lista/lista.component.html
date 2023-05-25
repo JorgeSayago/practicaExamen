@@ -1,0 +1,25 @@
+ <span *ngIf="listadoContactos.length == 0">
+    No existen contactos
+</span>
+
+ <table mat-table >
+    <thead>
+<tr>
+    <th> Materia</th>
+    <th> Modalidad</th>
+    <th> Duracion</th>
+    <th> Opciones</th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let formulario of listadoContactos">
+        <th>{{formulario.materia}}</th>
+        <th>{{formulario.modalidad}}</th>
+        <th>{{formulario.duracion}}</th>
+        <th>
+           {{
+           <a (click)="eliminar(formulario)">Eliminar</a>   }}         
+        </th>
+    </tr>
+</tbody>
+</table>  

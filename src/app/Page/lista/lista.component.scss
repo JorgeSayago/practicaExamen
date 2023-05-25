@@ -1,0 +1,22 @@
+table {
+    background-color: aqua;
+
+}
+th, td {
+    width: 20%;
+    border: 1px solid black;
+  }
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: white;
+      }
+      &:hover {
+        background-color: whitesmoke;
+      }
+    }
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  }
