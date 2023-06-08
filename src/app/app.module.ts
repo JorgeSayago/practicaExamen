@@ -16,6 +16,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { ProductoComponent } from './Page/producto/producto.component';
+import { ListaProductoComponent } from './Page/lista-producto/lista-producto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +31,9 @@ import {MatTableModule} from '@angular/material/table';
     MenuComponent,
     ArcercaComponent,
     ContactoComponent,
-    ListaComponent
+    ListaComponent,
+    ProductoComponent,
+    ListaProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +45,12 @@ import {MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatButtonModule,
      MatTooltipModule,
+     provideFirebaseApp(() => initializeApp(environment.firebase)),
+     provideAuth(() => getAuth()),
+     provideFirestore(() => getFirestore()),
 
   ],
-  providers: [],
+  providers: [{provide: FIREBASE_OPTIONS, useValue: environment.firebase}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

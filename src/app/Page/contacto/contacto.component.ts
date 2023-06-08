@@ -28,10 +28,10 @@ export class ContactoComponent {
     this.formularioService.save(this.formulario)
     this.formulario = new Formulario()
   }
-  actualizar() {
-    console.log(this.formulario)
-    this.formulario = new Formulario()
-  }
+  actualizar(formulario: Formulario) {
+    this.formularioService.update(this.formulario.uid,this.formulario)
+    this.router.navigate(['paginas/Lista'])
 
+  }
 
 }

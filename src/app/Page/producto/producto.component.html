@@ -1,0 +1,29 @@
+<h4> Ingrese los datos</h4>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre del producto</mat-label>
+    <input matInput placeholder="Ex.jabon" value="" [(ngModel)]="producto.nombre" required>
+    
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Marca</mat-label>
+    <input matInput placeholder="Ex.pantene " value="" [(ngModel)]="producto.marca" required>     
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>precio</mat-label>
+    <input matInput placeholder="Ex.12,50" value="" [(ngModel)]="producto.precio" required>
+  </mat-form-field>
+</p>
+
+<div class="example-button-row">
+<button (click)="guardar()" mat-button color="warn">guardar</button>
+</div>
+
+
+<div class="example-button-row">
+  <button (click)="actualizar(producto)" mat-button color="warn">actualizar</button>
+</div>

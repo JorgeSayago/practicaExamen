@@ -1,0 +1,25 @@
+
+<h1>listado de Productos</h1>
+
+<table mat-table >
+    <thead>
+<tr>
+    <th> Nombre </th>
+    <th> Marca</th>
+    <th> Precio</th>
+    <th> Opciones</th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let producto of listadoProductoFire | async">
+        <th>{{producto.nombre}}</th>
+        <th>{{producto.marca}}</th>
+        <th>{{producto.precio}}</th>
+        <th>
+           {{
+           <a (click)="delete(producto)">Eliminar</a>   }}      
+           {{ <a (click)="editar(producto)">editar</a>   }}   
+        </th>
+    </tr>
+</tbody>
+</table> 

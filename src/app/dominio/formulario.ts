@@ -1,5 +1,6 @@
 export class Formulario{
-    materia: string ='';
-    modalidad: string='';
-    duracion: string='';
+    uid: string ='';
+    nombre: string ='';
+    cedula: string='';
+    direccion: string='';
 }

@@ -10,22 +10,28 @@ import { FormularioService } from 'src/app/formulario.service';
 })
 export class ListaComponent {
   listadoContactos: Formulario[] = []
+  listadoFormularioFire: any;
 
   constructor(private formularioService: FormularioService,
       private router: Router) {
     this.listadoContactos = formularioService.getList()
     console.log('listadoformulario', this.listadoContactos)
+    this.listadoFormularioFire = formularioService.getAll()
+  }
+
+  delete(formulario: Formulario){
+    console.log('listadoformulario', this.listadoContactos)
+    this.formularioService.delete(formulario.uid)
   }
 
   editar(formulario: Formulario){
     console.log(formulario)
     let params: NavigationExtras = {
       queryParams: {
-        formulario: Formulario,
-        nombre: 'jorge'
+        formulario: formulario,
       }
     }
-    this.router.navigate(['paginas/nuevo-contacto'], params)
+    this.router.navigate(['paginas/Contacto'], params)
   }
 
   eliminar(formulario: Formulario) {

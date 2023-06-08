@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "contacto2003-2c81e": {
+      "hosting": {
+        "practicaExamen": [
+          "contacto2003-2c81e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "contacto2003-2c81e"
+  }
+}

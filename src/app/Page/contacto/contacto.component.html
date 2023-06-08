@@ -12,24 +12,24 @@
 <br/>  -->>
 
 
-
+<h4> Ingrese los datos</h4>
 <p>
     <mat-form-field appearance="fill">
-      <mat-label>Materia</mat-label>
-      <input matInput placeholder="Ex.Programacion" value="" [(ngModel)]="formulario.materia" required>
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Ex.Jorge" value="" [(ngModel)]="formulario.nombre" required>
       
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="fill">
-      <mat-label>Modalidad</mat-label>
-      <input matInput placeholder="Ex.Presencial" value="" [(ngModel)]="formulario.modalidad" required>     
+      <mat-label>cedula</mat-label>
+      <input matInput placeholder="Ex.0302345678" value="" [(ngModel)]="formulario.cedula" required>     
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="fill">
-      <mat-label>Duracion</mat-label>
-      <input matInput placeholder="Ex.120" value="" [(ngModel)]="formulario.duracion" required>
+      <mat-label>Direccion</mat-label>
+      <input matInput placeholder="Ex.Av de las Americas" value="" [(ngModel)]="formulario.direccion" required>
     </mat-form-field>
   </p>
 
@@ -39,5 +39,5 @@
 
 
   <div class="example-button-row">
-    <button (click)="actualizar()" mat-button color="warn">actualizar</button>
+    <button (click)="actualizar(formulario)" mat-button color="warn">actualizar</button>
   </div>
