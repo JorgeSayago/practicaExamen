@@ -15,15 +15,15 @@
 <h4> Ingrese los datos</h4>
 <p>
     <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput placeholder="Ex.Jorge" value="" [(ngModel)]="formulario.nombre" required>
+      <mat-label>cedula</mat-label>
+      <input matInput placeholder="Ex.0302456789" value="" [(ngModel)]="formulario.cedula" required>
       
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="fill">
-      <mat-label>cedula</mat-label>
-      <input matInput placeholder="Ex.0302345678" value="" [(ngModel)]="formulario.cedula" required>     
+      <mat-label>nombre</mat-label>
+      <input matInput placeholder="Ex.Pedro" value="" [(ngModel)]="formulario.nombre" required>     
     </mat-form-field>
   </p>
   <p>
@@ -36,8 +36,3 @@
 <div class="example-button-row">
   <button (click)="guardar()" mat-button color="warn">guardar</button>
 </div>
-
-
-  <div class="example-button-row">
-    <button (click)="actualizar(formulario)" mat-button color="warn">actualizar</button>
-  </div>

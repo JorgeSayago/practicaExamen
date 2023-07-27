@@ -25,24 +25,26 @@
 </table>  -->>
 
 <h1>lista de Usuarios</h1>
-
+<span *ngIf="listadoContactosWS.length == 0">
+    No existen contactos
+</span>
 <table mat-table >
     <thead>
 <tr>
-    <th> Nombre</th>
     <th> cedula</th>
+    <th> nombre</th>
     <th> Direccion</th>
     <th> Opciones</th>
 </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let formulario of listadoFormularioFire | async">
-        <th>{{formulario.nombre}}</th>
+    <tr *ngFor="let formulario of listadoContactosWS | async">
         <th>{{formulario.cedula}}</th>
+        <th>{{formulario.nombre}}</th>
         <th>{{formulario.direccion}}</th>
         <th>
            {{
-           <a (click)="delete(formulario)">Eliminar</a>   }}      
+           <a (click)="eliminar(formulario)">Eliminar</a>   }}      
            {{ <a (click)="editar(formulario)">editar</a>   }}   
         </th>
     </tr>

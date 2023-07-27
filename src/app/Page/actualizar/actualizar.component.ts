@@ -5,12 +5,11 @@ import { FormularioService } from 'src/app/formulario.service';
 import { PersonaService } from 'src/app/persona.service';
 
 @Component({
-  selector: 'app-contacto',
-  templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.scss']
+  selector: 'app-actualizar',
+  templateUrl: './actualizar.component.html',
+  styleUrls: ['./actualizar.component.scss']
 })
-export class ContactoComponent {
-
+export class ActualizarComponent {
   formulario: Formulario = new Formulario();
 
   constructor(private formularioService: FormularioService,
@@ -24,24 +23,6 @@ export class ContactoComponent {
         this.formulario = params['formulario']
       }
     }
-
-  guardar() {
-    console.log(this.formulario)
-    if(!isNaN(Number(this.formulario.cedula)) && this.formulario.cedula.length === 10 ){
-      this.personaService.save(this.formulario).subscribe(data => {
-        console.log("Resultado WS SAVE", data);
-        this.router.navigate(["paginas/Lista"])
-      });
-      this.formulario=new Formulario()
-      alert("Creado exitosamente")
-    }
-    else{
-      alert("error numero de cedula incompleta o incorrecta")
-    }
-
-
-    this.formulario = new Formulario()
-  }
 
   actualizar(formulario: Formulario) {
     this.formularioService.update(this.formulario.cedula,this.formulario)
@@ -59,5 +40,10 @@ export class ContactoComponent {
     });
     //this.contacto=new Contacto()
     this.router.navigate(['paginas/Lista'])
+    
     }
+
+reloadPage(){
+
+ }
 }

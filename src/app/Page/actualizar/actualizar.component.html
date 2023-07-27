@@ -1,0 +1,27 @@
+<div class="mi-elemento">
+<h4> Actualice sus Datos</h4>
+<p>
+    <mat-form-field appearance="fill">
+      <mat-label>cedula</mat-label>
+      <input matInput placeholder="Ex.0302456789" value="" [(ngModel)]="formulario.cedula" readonly>
+      
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>nombre</mat-label>
+      <input matInput placeholder="Ex.Pedro" value="" [(ngModel)]="formulario.nombre" required>     
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Direccion</mat-label>
+      <input matInput placeholder="Ex.Av de las Americas" value="" [(ngModel)]="formulario.direccion" required>
+    </mat-form-field>
+  </p>
+
+
+  <div class="example-button-row">
+    <button (click)="modificar()" mat-button color="warn">actualizar</button>
+  </div>
+</div>

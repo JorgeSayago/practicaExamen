@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Formulario } from './dominio/formulario';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class FormularioService {
   save(formulario: Formulario){
     this.formularios.push(formulario)
     console.log(this.formularios)
-    formulario.uid=this.db.createId()
+    formulario.cedula=this.db.createId()
     this.create(formulario)
   }
   getList(){
@@ -33,13 +34,13 @@ export class FormularioService {
   }
 
   create(formulario: Formulario): any {
-    return this.FormularioRef.doc(formulario.uid).set({ ...formulario });
+    return this.FormularioRef.doc(formulario.cedula).set({ ...formulario });
   }
   update(id: string, data: any): Promise<void> {
     return this.FormularioRef.doc(id).update(data);
   }
 
-  delete(id: string): Promise<void> {
-    return this.FormularioRef.doc(id).delete();
+     delete(id: string): Promise<void> {
+     return this.FormularioRef.doc(id).delete();
   }
 }

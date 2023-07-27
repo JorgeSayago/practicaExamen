@@ -23,6 +23,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ProductoComponent } from './Page/producto/producto.component';
 import { ListaProductoComponent } from './Page/lista-producto/lista-producto.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ActualizarComponent } from './Page/actualizar/actualizar.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { ListaProductoComponent } from './Page/lista-producto/lista-producto.com
     ContactoComponent,
     ListaComponent,
     ProductoComponent,
-    ListaProductoComponent
+    ListaProductoComponent,
+    ActualizarComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { ListaProductoComponent } from './Page/lista-producto/lista-producto.com
     MatIconModule,
     MatButtonModule,
      MatTooltipModule,
+     HttpClientModule,
      provideFirebaseApp(() => initializeApp(environment.firebase)),
      provideAuth(() => getAuth()),
      provideFirestore(() => getFirestore()),
@@ -53,4 +58,6 @@ import { ListaProductoComponent } from './Page/lista-producto/lista-producto.com
   providers: [{provide: FIREBASE_OPTIONS, useValue: environment.firebase}],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
